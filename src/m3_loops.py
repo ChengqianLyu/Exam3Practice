@@ -5,8 +5,8 @@ This problem provides practice at:
   ***  FOR and WHILE loops.  ***
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Chengqian Lyu.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ########################################################################
 # Students:
@@ -134,7 +134,20 @@ def run_test_practice_problem3():
     # SUGGESTION: Ask an assistant to CHECK your tests to confirm
     #             that they are adequate tests!
     ####################################################################
+    expected1 = [-5, 0, 1]
+    answer1 = practice_problem3(-5, 3, 0.25)
+    print()
+    print('Test 1:')
+    print('Expected:', expected1)
+    print('Actual:  ', answer1)
 
+
+    expected2 = [1, 7]
+    answer2 = practice_problem3(-2, 2, 1.3)
+    print()
+    print('Test 2:')
+    print('Expected:', expected2)
+    print('Actual:  ', answer2)
 
 def practice_problem3(start, n, threshold):
     """
@@ -216,7 +229,15 @@ def practice_problem3(start, n, threshold):
     #    DIFFICULTY:      5
     #    TIME ESTIMATE:   < 15 minutes.
     ####################################################################
-
+    list = []
+    k = 0
+    while True:
+        if len(list) == n:
+            break
+        if (math.sin(start + k) + math.cos(start + k)) > threshold:
+            list = list + [start + k]
+            start = start + 1
+    return list
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
